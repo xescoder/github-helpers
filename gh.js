@@ -1,5 +1,3 @@
-// Github helpers
-
 (function($, g) {
 
     var gh = g.gh = {};
@@ -72,11 +70,16 @@
 
     };
 
-    gh.comments = function(show) {
-        $('.inline-comments')[show ? 'show': 'hide']();
-        return '';
+    gh.comments = function() {
+        $('.inline-comments').toggle();
+        return $('.inline-comments').is(':visible') ? 'visible' : 'not visible';
     };
 
+    g.gf = gh.files;
+    g.go = gh.only;
+    g.gc = gh.comments;
+
+    console.clear();
     return 'github helpers inited';
 
 })(jQuery, window);
