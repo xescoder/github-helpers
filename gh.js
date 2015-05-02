@@ -1,11 +1,13 @@
 (function($, g) {
 
-    var gh = g.gh = {};
+    var gh = g.g = {};
 
-    gh.files = function(isVisible) {
+    g.gf = gh.files = function(isVisible) {
 
         var selector = '.file' + (isVisible ? ':visible' : ''),
             files = [];
+
+        console.clear();
 
         $(selector).each(function() {
 
@@ -21,7 +23,7 @@
 
     };
 
-    gh.only = function(files) {
+    g.go = gh.only = function(files) {
 
         !files && (files = '');
         !$.isArray(files) && (files = [files]);
@@ -50,11 +52,11 @@
         $('.file').each(function() {
 
             var $file = $(this),
-                title = $file.find('.js-selectable-text').attr('title'),
+                path = $file.find('.js-selectable-text').attr('title'),
                 hide = true, i;
 
             for (i=0; i<patterns.length; i++) {
-                if (patterns[i](title)) {
+                if (patterns[i](path)) {
                     hide = false;
                     break;
                 }
@@ -70,14 +72,17 @@
 
     };
 
-    gh.comments = function() {
-        $('.inline-comments').toggle();
-        return $('.inline-comments').is(':visible') ? 'visible' : 'not visible';
-    };
+    g.gc = gh.comments = function() {
 
-    g.gf = gh.files;
-    g.go = gh.only;
-    g.gc = gh.comments;
+        console.clear();
+
+        return $('.inline-comments')
+            .toggle()
+            .is(':visible')
+                ? 'comments visible'
+                : 'comments not visible';
+
+    };
 
     console.clear();
     return 'github helpers inited';
