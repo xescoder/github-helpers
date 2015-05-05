@@ -2,6 +2,13 @@
 
     var gh = g.g = {};
 
+    /**
+     * Получить список изменённых в pull request файлов.
+     *
+     * @alias gf
+     * @alias gh.files
+     * @param {Boolean} isVisible - Если true, то вывести только отображённые файлы.
+     */
     g.gf = gh.files = function(isVisible) {
 
         var selector = '.file' + (isVisible ? ':visible' : ''),
@@ -23,6 +30,14 @@
 
     };
 
+    /**
+     * Отобразить только соответствующие шаблону файлы.
+     * Если вызвать без параметра откроет все скрытые файлы.
+     *
+     * @alias go
+     * @alias gh.only
+     * @param {String|String[]|RegExp|RegExp[]} files - Набор шаблонов путей файлов.
+     */
     g.go = gh.only = function(files) {
 
         !files && (files = '');
@@ -72,6 +87,13 @@
 
     };
 
+    /**
+     * Показать / скрыть комментарии.
+     * Если комментарии были скрыты, они откроются и наоборот.
+     *
+     * @alias gc
+     * @alias gh.comments
+     */
     g.gc = gh.comments = function() {
 
         console.clear();
@@ -85,6 +107,6 @@
     };
 
     console.clear();
-    return 'github helpers inited';
+    return 'Github helpers inited';
 
 })(jQuery, window);
