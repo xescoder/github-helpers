@@ -6,7 +6,7 @@
      * Получить список изменённых в pull request файлов.
      *
      * @alias gf
-     * @alias gh.files
+     * @alias g.files
      * @param {Boolean} isVisible - Если true, то вывести только отображённые файлы.
      */
     g.gf = gh.files = function(isVisible) {
@@ -35,7 +35,7 @@
      * Если вызвать без параметра откроет все скрытые файлы.
      *
      * @alias go
-     * @alias gh.only
+     * @alias g.only
      * @param {String|String[]|RegExp|RegExp[]} files - Набор шаблонов путей файлов.
      */
     g.go = gh.only = function(files) {
@@ -92,7 +92,7 @@
      * Если комментарии были скрыты, они откроются и наоборот.
      *
      * @alias gc
-     * @alias gh.comments
+     * @alias g.comments
      */
     g.gc = gh.comments = function() {
 
