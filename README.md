@@ -12,6 +12,7 @@ Github code review helpers
 ------
 
 ````console
+> // Вывести список изменённых файлов
 > gf()
    bower.json (2)
    examples/js/all.js (37)
@@ -22,8 +23,26 @@ Github code review helpers
    package.json (2)
 <- ""
 
+> // Скрыть комментарии во всех файлах
 > gc()
 <- "comments not visible"
+
+> // Скрыть все файлы, кроме json
+> go('json')
+   bower.json (2)
+   package.json (2)
+<- ""
+
+> // Открыть все скрытые файлы
+> go()
+   bower.json (2)
+   examples/js/all.js (37)
+   examples/js/form_with_map.js (1)
+   jquery.kladr.min.js (2)
+   kladr/js/core.js (58)
+   kladr/js/kladr.js (379)
+   package.json (2)
+<- ""
 ````
 
 Установка
